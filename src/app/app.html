@@ -1,0 +1,78 @@
+<div class="container">
+  <h1>🌱 Smart Agriculture System</h1>
+  <p class="subtitle">Plant Disease Detection and Crop Yield Prediction</p>
+
+  <div class="cards">
+    <div class="card">
+      <h2>📷 Disease Detection</h2>
+      <p>Upload a leaf image and detect the disease.</p>
+      <button (click)="openSection('disease')">Open</button>
+    </div>
+
+    <div class="card">
+      <h2>📊 Crop Yield Prediction</h2>
+      <p>Enter farm details and predict crop yield.</p>
+      <button (click)="openSection('yield')">Open</button>
+    </div>
+  </div>
+
+  <!-- Disease Section -->
+  <div class="section-box" *ngIf="selectedSection === 'disease'">
+    <div class="container">
+      <h2>Plant Disease Detection</h2>
+
+      <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+      <br /><br />
+
+      <button (click)="uploadImage()">Detect Disease</button>
+
+      <div *ngIf="previewUrl" class="preview-box">
+        <img [src]="previewUrl" width="250" />
+      </div>
+
+      <div *ngIf="result" class="result-box">
+        <h3>Detection Result</h3>
+        <p><strong>Disease:</strong> {{ result.disease }}</p>
+        <p><strong>Confidence:</strong> {{ result.confidence }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Yield Section -->
+  <div class="section-box" *ngIf="selectedSection === 'yield'">
+    <div class="container">
+      <h2>Crop Yield Prediction</h2>
+
+      <input [(ngModel)]="yieldForm.Area" placeholder="Area" />
+      <br /><br />
+
+      <input [(ngModel)]="yieldForm.Item" placeholder="Crop Item" />
+      <br /><br />
+      <select [(ngModel)]="yieldForm.soil_type">
+  <option value="">Select Soil Type</option>
+  <option value="Loamy">Loamy</option>
+  <option value="Clay">Clay</option>
+  <option value="Sandy">Sandy</option>
+  <option value="Black">Black</option>
+  <option value="Red">Red</option>
+</select>
+<br><br>
+
+      <input [(ngModel)]="yieldForm.average_rain_fall_mm_per_year" type="number" placeholder="Rainfall (mm)" />
+      <br /><br />
+
+      <input [(ngModel)]="yieldForm.pesticides_tonnes" type="number" placeholder="Pesticides (kg)" />
+      <br /><br />
+
+      <input [(ngModel)]="yieldForm.avg_temp" type="number" placeholder="Temperature (C)" />
+      <br /><br />
+
+      <button (click)="predictYield()">Predict Yield</button>
+
+      <div *ngIf="yieldResult" class="result-box">
+        <h3>Predicted Yield</h3>
+        <p>{{ yieldResult?.yield_per_acre }} kg/acre</p>
+      </div>
+    </div>
+  </div>
+</div>

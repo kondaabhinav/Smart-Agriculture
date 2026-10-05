@@ -1,0 +1,139 @@
+.container {
+  text-align: center;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+  
+  h1 {
+    color: #a5ffb2;
+    font-size: 36px;
+  }
+  
+  .subtitle {
+    color: #e0ffe5;
+  }
+  
+  .subtitle {
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  .cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background: white;
+    width: 280px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h2 {
+    color: #1b5e20;
+  }
+  
+  .card p {
+    color: #444;
+    margin: 15px 0;
+  }
+  
+  button {
+    background: linear-gradient(45deg, #2e7d32, #66bb6a);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+  }
+  
+  button:hover {
+    background: #1b5e20;
+  }
+  
+  .section-box {
+    margin: 40px auto;
+    width: 320px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    color: white;
+  }
+  
+  input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  .card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    width: 280px;
+    color: white;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    transition: 0.3s;
+  }
+  .card:hover {
+    transform: translateY(-8px);
+  }
+  .preview-img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  .result-card {
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .result-box {
+  margin-top: 15px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.preview-box {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.preview-box img {
+  border-radius: 10px;
+  max-width: 100%;
+}
+input, select {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+select {
+  background-color: white;
+  cursor: pointer;
+}
